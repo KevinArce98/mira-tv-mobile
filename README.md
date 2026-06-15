@@ -1,56 +1,60 @@
-# Welcome to your Expo app 👋
+# Mira TV
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+App IPTV (React Native / Expo SDK 56) que reproduce catálogos vía **Xtream Codes API**, con catálogo, progreso y favoritos en **SQLite local**. MVP de una sola cuenta.
 
-## Get started
+## Stack
 
-1. Install dependencies
+- Expo SDK 56 (prebuild + config plugins), React Native 0.85, React 19, TypeScript estricto
+- Expo Router (rutas en `src/app/`, alias `@/*` → `src/*`)
+- TanStack Query (async/cache) + Zustand (estado UI)
+- expo-sqlite (datos locales) + expo-secure-store (password Xtream)
+- react-native-video para HLS/VOD (requiere dev build, **no funciona en Expo Go**)
 
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## Empezar
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+El reproductor usa módulos nativos, así que se necesita un **development build** (no Expo Go):
 
-### Other setup steps
+```bash
+npx expo run:ios
+npx expo run:android
+```
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+Para builds de tienda con EAS, ver `eas.json`:
 
-## Learn more
+```bash
+eas login
+eas init
+eas build --profile production --platform ios
+eas build --profile production --platform android
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+## Estructura
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```
+src/
+  app/          Rutas (tabs, content/[id], player, setup, settings)
+  components/   media/ y ui/ + ThemedText/ThemedView (sistema de tokens propio)
+  constants/    theme.ts (paleta de marca, Spacing, Fonts)
+  db/           schema.ts (migraciones versionadas) + repositories/
+  services/     xtream/ (cliente API), sync, series, playback
+  hooks/data/   hooks de React Query que consume la UI
+  lib/          id, query-client, navigation, language
+  types/        models.ts (dominio = SQLite) · xtream.ts (API)
+```
 
-## Join the community
+## Marca
 
-Join our community of developers creating universal apps.
+- Paleta: Shadow Grey `#272727` + Sandy Clay `#D4AA7D`
+- Tipografías: Montserrat (display) + Inter (cuerpo)
+- Icono: monograma **M**
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Calidad
+
+```bash
+npx tsc --noEmit
+npx expo lint
+```
