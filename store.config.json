@@ -8,9 +8,10 @@
         "description": "Mira TV es un reproductor para tu proveedor de IPTV compatible con Xtream Codes. Conecta tu cuenta e introduce tus propias credenciales para acceder a tu catálogo: canales en vivo, películas y series.\n\nMira TV no incluye ni distribuye contenido: solo reproduce el catálogo de la cuenta que tú configures. Necesitas una suscripción activa con un proveedor de IPTV propio.\n\nCaracterísticas:\n• Canales en vivo, películas y series desde tu cuenta Xtream\n• Continuar viendo y favoritos\n• Selector de audio y subtítulos\n• Búsqueda y filtrado por categorías\n• Tus credenciales se guardan cifradas en el dispositivo",
         "keywords": ["iptv", "xtream", "reproductor", "streaming", "tv en vivo", "player", "m3u"],
         "releaseNotes": "Primera versión de Mira TV.",
-        "marketingUrl": "REEMPLAZAR_https://tu-sitio.com",
-        "supportUrl": "REEMPLAZAR_https://tu-sitio.com/soporte",
-        "privacyPolicyUrl": "REEMPLAZAR_https://tu-sitio.com/privacidad"
+        "marketingUrl": "https://kevinarce98.github.io/mira-tv/privacy/",
+        "supportUrl": "https://kevinarce98.github.io/mira-tv/privacy/",
+        "privacyPolicyUrl": "https://kevinarce98.github.io/mira-tv/privacy/",
+        "termsOfServiceUrl": "https://kevinarce98.github.io/mira-tv/terms/"
       },
       "en-US": {
         "title": "Mira TV",
@@ -18,9 +19,10 @@
         "description": "Mira TV is a player for your own Xtream Codes compatible IPTV provider. Connect your account with your own credentials to access your catalog: live channels, movies and series.\n\nMira TV does not include or distribute any content: it only plays the catalog of the account you configure. An active subscription with your own IPTV provider is required.\n\nFeatures:\n• Live channels, movies and series from your Xtream account\n• Continue watching and favorites\n• Audio and subtitle track selection\n• Search and category filtering\n• Your credentials are stored encrypted on the device",
         "keywords": ["iptv", "xtream", "player", "streaming", "live tv", "m3u"],
         "releaseNotes": "First release of Mira TV.",
-        "marketingUrl": "REEMPLAZAR_https://your-site.com",
-        "supportUrl": "REEMPLAZAR_https://your-site.com/support",
-        "privacyPolicyUrl": "REEMPLAZAR_https://your-site.com/privacy"
+        "marketingUrl": "https://kevinarce98.github.io/mira-tv/privacy/",
+        "supportUrl": "https://kevinarce98.github.io/mira-tv/privacy/",
+        "privacyPolicyUrl": "https://kevinarce98.github.io/mira-tv/privacy/",
+        "termsOfServiceUrl": "https://kevinarce98.github.io/mira-tv/terms/"
       }
     },
     "categories": ["ENTERTAINMENT"],
@@ -42,9 +44,9 @@
       "kidsAgeBand": null
     },
     "review": {
-      "firstName": "REEMPLAZAR",
-      "lastName": "REEMPLAZAR",
-      "email": "REEMPLAZAR@correo.com",
+      "firstName": "Kevin",
+      "lastName": "Arias",
+      "email": "arias9068@gmail.com",
       "phone": "REEMPLAZAR_+502...",
       "demoUsername": "REEMPLAZAR_usuario_demo",
       "demoPassword": "REEMPLAZAR_password_demo",
